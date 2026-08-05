@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { DataSource } = require('typeorm')
-const User = require('../entities/USER')
+const User = require('../entities/User')
 const Skill = require('../entities/Skill')
 const Course = require('../entities/Course')
 
