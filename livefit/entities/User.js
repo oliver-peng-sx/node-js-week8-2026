@@ -1,0 +1,40 @@
+const { EntitySchema } = require('typeorm')
+
+module.exports = new EntitySchema({
+  name: 'User',
+  tableName: 'USER',
+  columns: {
+    id: {
+      primary: true,
+      type: 'uuid',
+      generated: 'uuid',
+      nullable: false,
+    },
+    name: {
+      type: 'varchar',
+      length: 50,
+      nullable: false,
+    },
+    email: {
+      type: 'varchar',
+      length: 320,
+      nullable: false,
+      unique: true,
+    },
+    role: {
+      type: 'varchar',
+      length: 20,
+      nullable: false,
+    },
+    created_at: {
+      type: 'timestamp',
+      createDate: true,  // 新增資料時自動填入當下時間
+      nullable: false,
+    },
+    updated_at: {
+      type: 'timestamp',
+      updateDate: true,  // 更新資料時自動填入當下時間
+      nullable: false,
+    },
+  },
+})
